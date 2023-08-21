@@ -1,0 +1,124 @@
+#include <iostream>
+
+using namespace std;
+
+int
+main ()
+{
+  cout << "Grade Card";
+  cout << "A - 5" << endl;
+  cout << "B - 4" << endl;
+  cout << "C - 3" << endl;
+  cout << "D - 2" << endl;
+  cout << "E - 1" << endl;
+  cout << "F - 0" << endl;
+
+  char grade[10];
+  int mark[10];
+  int sum = 0,max,min,avg, n;
+
+  cout << "Enter the number of students";
+  cin >> n;
+
+  for (int i = 0; i < n; i++)
+    {
+      cout << "Enter your grade";
+      cin >> grade;
+
+      cout << "Enter marks";
+      cin >> mark[i];
+    }
+    min=mark[0];
+
+   for(int i=0;i<n;i++)
+   {
+      sum = sum + mark[i];
+
+      if (mark[i] > max)
+	{
+	  max = mark[i];
+	}
+
+      if (min > mark[i])
+	{
+	  min = mark[i];
+	}
+    }
+
+  avg = sum / n;
+
+  switch (avg)
+    {
+    case 0:
+      cout << "Average = " << avg << endl;
+      cout << "Grade = F" << endl;
+      break;
+
+    case 1:
+      cout << "Average = " << avg << endl;
+      cout << "Grade = E" << endl;
+      break;
+
+    case 2:
+      cout << "Average = " << avg << endl;
+      cout << "Grade = D" << endl;
+      break;
+
+    case 3:
+      cout << "Average = " << avg << endl;
+      cout << "Grade = C" << endl;
+      break;
+
+    case 4:
+      cout << "Average = " << avg << endl;
+      cout << "Grade = B" << endl;
+      break;
+
+    case 5:
+      cout << "Average = " << avg << endl;
+      cout << "Grade = A" << endl;
+      break;
+
+    default:
+      cout << "Invalid Grade" << endl;
+      break;
+
+    }
+
+  switch (max)
+    {
+     case 0: cout << "Max Grade = F" << endl;
+             break;
+     case 1: cout << "Max Grade = E" << endl;
+            break;
+     case 2: cout << "Max Grade = D" << endl;
+            break;
+     case 3: cout << "Max Grade = C" << endl;
+            break;
+     case 4: cout << "Max Grade = B" << endl;
+            break;
+     case 5: cout << "Max Grade = A" << endl;
+            break;
+     default: cout << "Invalid grade" << endl;
+             break;
+    }
+
+  switch(min)
+    {
+     case 0: cout << "Min Grade = F";
+             break;
+     case 1: cout << "Min Grade = E";
+            break;
+     case 2: cout << "Min Grade = D";
+            break;
+     case 3: cout << "Min Grade = C";
+            break;
+     case 4: cout << "Min Grade = B";
+            break;
+     case 5: cout << "Min Grade = A";
+            break;
+     default: cout << "Invalid grade";
+             break; 
+    }
+  return 0;
+}
